@@ -19,7 +19,7 @@ func TypeNum(typeName string) (AddressType, error) {
 	case "move":
 		return move, nil
 	default:
-		return -1, errors.New("no such type " + typeName)
+		return -1, errors.New("no type provided or no such type " + typeName)
 	}
 }
 
@@ -28,4 +28,10 @@ type Params struct {
 	SeqPos        int
 	Type          AddressType
 	CaseSensetive bool
+	Workers int
+}
+
+type Keypair struct {
+	PublicKey  string
+	PrivateKey string
 }

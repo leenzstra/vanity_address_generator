@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - GOOS=windows GOARCH=amd64 go build -o dist/windows_amd64/vanitygen.exe cmd/gen.go
+      - GOOS=linux GOARCH=amd64 go build -o dist/linux_amd64/vanitygen cmd/gen.go
+      - GOOS=darwin GOARCH=amd64 go build -o dist/darwin_amd64/vanitygen cmd/gen.go
+      - GOOS=darwin GOARCH=arm64 go build -o dist/darwin_arm64/vanitygen cmd/gen.go
