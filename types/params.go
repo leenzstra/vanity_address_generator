@@ -5,19 +5,19 @@ import "errors"
 type AddressType int
 
 const (
-	evm AddressType = iota
-	solana 
-	move
+	EvmAddr AddressType = iota
+	SolanaAddr 
+	MoveAddr
 )
 
 func TypeNum(typeName string) (AddressType, error) {
 	switch typeName {
 	case "sol":
-		return solana, nil
+		return SolanaAddr, nil
 	case "evm":
-		return evm, nil
+		return EvmAddr, nil
 	case "move":
-		return move, nil
+		return MoveAddr, nil
 	default:
 		return -1, errors.New("no type provided or no such type " + typeName)
 	}

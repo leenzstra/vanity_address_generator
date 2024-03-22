@@ -45,7 +45,10 @@ func main() {
 	}
 
 	// create generator
-	gen := gentype.NewSolanaGen(p)
+	gen, err := gentype.SelectGen(typeNum, p)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	// create parallel generator
 	multigen := multigen.New(gen, *workers)

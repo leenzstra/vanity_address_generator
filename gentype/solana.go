@@ -11,7 +11,6 @@ import (
 var _ GenInterface = (*SolanaGen)(nil)
 
 type SolanaGen struct {
-	addrLen int
 	params  types.Params
 }
 
@@ -46,7 +45,6 @@ func (s *SolanaGen) Check(pub []byte) bool {
 
 func NewSolanaGen(p types.Params) *SolanaGen {
 	return &SolanaGen{
-		addrLen: 44,
 		params:  p,
 	}
 }
